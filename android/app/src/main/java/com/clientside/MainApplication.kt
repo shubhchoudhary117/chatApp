@@ -21,6 +21,11 @@ class MainApplication : Application(), ReactApplication {
               // add(MyReactNativePackage())
             }
 
+            @Override
+           protected JSIModulePackage getJSIModulePackage() {
+          return new ReanimatedJSIModulePackage(); // <- add
+          }
+
         override fun getJSMainModuleName(): String = "index"
 
         override fun getUseDeveloperSupport(): Boolean = BuildConfig.DEBUG
